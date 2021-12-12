@@ -13,13 +13,18 @@ If the test group performs better than the restudy group on the final test, ther
 These are the results that we want to model.
 
 -------
-_Developed at the Núcleo de Neurociências (Neuroscience Research Center) at the Federal University of Minas Gerais (Brazil)._
+Developed at the Núcleo de Neurociências (Neuroscience Research Center) at the Federal University of Minas Gerais (Brazil).
 
-Núcleo de Neurociências (Neuroscience Research Center)
-Department of Physiology and Biophysics
-Institute of Biological Sciences (ICB)
-Federal University of Minas Gerais (UFMG)
-Belo Horizonte - MG - Brazil
+Núcleo de Neurociências (Neuroscience Research Center)<br />
+Department of Physiology and Biophysics<br />
+Institute of Biological Sciences (ICB) <br />
+Federal University of Minas Gerais  (UFMG)<br />
+Av. Antônio Carlos, 6627 - Postal Code:  31270-901 - Campus Pampulha<br />
+Belo Horizonte - MG - Brazil<br />
+<br />
+<br />
+<br />
+<br />
+
 -------
-
-_memento mori
+_memento mori_
