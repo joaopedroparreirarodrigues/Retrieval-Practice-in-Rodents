@@ -4,7 +4,6 @@
                  xmlns:cv="clr-namespace:Bonsai.Vision;assembly=Bonsai.Vision"
                  xmlns:scr="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
-                 xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
@@ -15,11 +14,11 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:FileCapture">
                 <cv:FileName>2.avi</cv:FileName>
-                <cv:PlaybackRate>1280</cv:PlaybackRate>
+                <cv:PlaybackRate>512</cv:PlaybackRate>
                 <cv:StartPosition>0</cv:StartPosition>
                 <cv:PositionUnits>Frames</cv:PositionUnits>
                 <cv:Loop>false</cv:Loop>
-                <cv:Playing>true</cv:Playing>
+                <cv:Playing>false</cv:Playing>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -172,10 +171,10 @@ def process(value):
         <scr:Script>
 def process(value):
   max_time = 100
-  cutoff = max_time * 50/100 #85% of the whole trial
+  cutoff = max_time * 48/100 #85% of the whole trial
   completed = False
 
-  if value &gt; cutoff:
+  if value == cutoff:
     completed = True
     return value, completed
   return value, completed</scr:Script>
@@ -303,10 +302,10 @@ def process(value):
         <scr:Script>
 def process(value):
   max_time = 100
-  cutoff = max_time * 50/100 #85% of the whole trial
+  cutoff = max_time * 48/100 #85% of the whole trial
   completed = False
 
-  if value &gt; cutoff:
+  if value == cutoff:
     completed = True
     return value, completed
   return value, completed</scr:Script>
@@ -434,10 +433,10 @@ def process(value):
         <scr:Script>
 def process(value):
   max_time = 100
-  cutoff = max_time * 50/100 #85% of the whole trial
+  cutoff = max_time * 48/100 #85% of the whole trial
   completed = False
 
-  if value &gt; cutoff:
+  if value == cutoff:
     completed = True
     return value, completed
   return value, completed</scr:Script>
@@ -450,22 +449,13 @@ def process(value):
         <scr:Script>@returns(tuple)
 def process(value):
   left, down, right = value
-  if left[1]:
+  if left:
     return 1, 'left'
-  if down[1]:
+  elif down:
     return 1, 'down'
-  if right[1]:
+  elif right:
     return 1, 'right'
   return 0, 'not completed'</scr:Script>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:TextWriter">
-          <io:FileName>t.txt</io:FileName>
-          <io:Suffix>None</io:Suffix>
-          <io:Buffered>true</io:Buffered>
-          <io:Overwrite>false</io:Overwrite>
-          <io:Append>false</io:Append>
-        </Combinator>
       </Expression>
     </Nodes>
     <Edges>
@@ -491,7 +481,6 @@ def process(value):
       <Edge From="18" To="19" Label="Source1" />
       <Edge From="19" To="20" Label="Source3" />
       <Edge From="20" To="21" Label="Source1" />
-      <Edge From="21" To="22" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
