@@ -51,7 +51,7 @@
         <Combinator xsi:type="ard:CreateArduino">
           <ard:Name>Arduino UNO</ard:Name>
           <ard:PortName>COM1</ard:PortName>
-          <ard:BaudRate>57600</ard:BaudRate>
+          <ard:BaudRate>9600</ard:BaudRate>
           <ard:SamplingInterval>19</ard:SamplingInterval>
         </Combinator>
       </Expression>
@@ -489,12 +489,6 @@ def process(value):
 def process(value):
   return value[0] == 1</scr:Script>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="ard:DigitalOutput">
-          <ard:PortName>Arduino UNO</ard:PortName>
-          <ard:Pin>6</ard:Pin>
-        </Combinator>
-      </Expression>
     </Nodes>
     <Edges>
       <Edge From="2" To="3" Label="Source1" />
@@ -523,7 +517,6 @@ def process(value):
       <Edge From="22" To="26" Label="Source1" />
       <Edge From="23" To="24" Label="Source1" />
       <Edge From="24" To="25" Label="Source1" />
-      <Edge From="26" To="27" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
