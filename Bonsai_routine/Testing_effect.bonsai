@@ -479,7 +479,9 @@ def process(value):
         <scr:Script>@returns(str)
 def process(value):
   if value[0] == 1:
-    return "%"</scr:Script>
+    return "%"
+  else:
+    return "empty"</scr:Script>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="io:SerialStringWrite">
@@ -497,7 +499,9 @@ def process(value):
         <scr:Script>@returns(int)
 def process(value):
   if value:
-    return int(value)</scr:Script>
+    return int(value)
+  else:
+    return 0</scr:Script>
       </Expression>
       <Expression xsi:type="rx:Accumulate" />
     </Nodes>
